@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, InjectionToken, Inject} from '@angular/core';
+//@ts-ignore
+import { tokens } from './tokens'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public test: any;
+  constructor(
+    @Inject(tokens[0]) test
+  ){
+    this.test = test;
+  }
   title = 'dynamicPlugin';
+  testIteration = new Array(300);
 }

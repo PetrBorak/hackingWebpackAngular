@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dynamicPluginsPath: [
+    {
+      path: 'https://raw.githubusercontent.com/PetrBorak/ng-sticky-header/master/dist/ng-sticky-header/fesm2015/borak-ng-sticky-header.js',
+      member: 'NgStickyHeaderModule'
+
+    }
+    ]
 };
 
 /*
