@@ -8,9 +8,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-debugger;
 AppModule.then((appModule) => {
-  debugger;
     platformBrowserDynamic().bootstrapModule(appModule.AppModule)
       .catch(err => console.error(err));
 });

@@ -18,6 +18,5 @@ export const parseImports = (maps) => (txt: string) => {
       txt = txt.replace(importParsed, finalReq)
     }
   })
-  debugger
   return txt;
 }

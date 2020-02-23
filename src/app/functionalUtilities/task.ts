@@ -1,7 +1,7 @@
 import { compose, identity } from 'ramda'
 
 export class Task {
-  private fork: any
+  public fork: any
   constructor(fork) {
     this.fork = fork;
   }

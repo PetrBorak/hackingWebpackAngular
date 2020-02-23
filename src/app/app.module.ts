@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import  { AppComponent }  from './app.component';
-import { dynamicPlugins } from './dynamicPlugins';
+import { dynamicPlugins } from 'src/app/DynamicPlugin/dynamicPlugins';
 
-export default Promise.all(dynamicPlugins).then((plugins) => {
-  debugger;
+interface Plugin {
+  injectionToken: any,
+  export: any,
+  module: any
+}
+
+export default Promise.all(dynamicPlugins).then((plugins: Plugin[]) => {
   //@ts-ignore
    const pluginMember = __webpack_require__(plugins[0].module);
 
-    debugger;
-    @NgModule({
+   @NgModule({
       declarations: [
         AppComponent
       ],
@@ -30,6 +34,4 @@ export default Promise.all(dynamicPlugins).then((plugins) => {
     return {
       AppModule
     };
-
-
 })

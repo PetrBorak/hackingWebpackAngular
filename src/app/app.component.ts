@@ -1,6 +1,6 @@
 import {Component, InjectionToken, Inject} from '@angular/core';
 //@ts-ignore
-import { tokens } from './tokens'
+import { tokens } from 'src/app/DynamicPlugin/tokens'
 
 @Component({
   selector: 'app-root',
